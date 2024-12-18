@@ -12,7 +12,16 @@ import {
   Box,
 } from "@mui/material";
 
-function App() {
+interface ITestComponentProps {
+  name: string;
+}
+const TestComponent: React.FunctionComponent<ITestComponentProps> = ({
+  name,
+}: ITestComponentProps) => {
+  return <div>{name}</div>;
+};
+
+const App = () => {
   return (
     <div>
       {/* Header */}
@@ -24,6 +33,7 @@ function App() {
         </Toolbar>
       </AppBar>
 
+      <TestComponent name="Hello World" />
       {/* Blog Post Container */}
       <Container maxWidth="md" sx={{ mt: 4 }}>
         <Card>
@@ -84,6 +94,6 @@ function App() {
       </Box>
     </div>
   );
-}
+};
 
 export default App;
